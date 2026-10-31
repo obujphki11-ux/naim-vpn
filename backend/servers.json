@@ -1,0 +1,7 @@
+{
+  "servers": [
+    {"id":"sg-oracle","name":"Singapore","country":"SG","host":"","port":51820,"protocol":"wireguard","status":"not_configured","note":"Oracle Always Free - main server, needs card-verified account or alternative VPS"},
+    {"id":"in-azure","name":"India - Mumbai","country":"IN","host":"","port":51820,"protocol":"wireguard","status":"not_configured","note":"Azure trial - 12 months only, not permanent"},
+    {"id":"sg-vpswala","name":"Singapore - VPSWala Starter","country":"SG","host":"","port":51820,"protocol":"wireguard","status":"not_configured","note":"VPSWala Starter - user must verify own GitHub in browser; specs on site are inconsistent (500MB-25GB disk listed), verify real disk/RAM after deploy before using for VPN"}
+  ]
+}
