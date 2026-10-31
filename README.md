@@ -27,3 +27,9 @@ curl -X POST localhost:8787/login -d '{"email":"demo@naimvpn.local","password":"
 2. VPS-এ `setup-wireguard.sh` চালিয়ে IP পাওয়া।
 3. `servers.json`-এ host বসিয়ে status `active` করা, peer বানিয়ে টেস্ট।
 4. Android Studio / manual pipeline-এ APK বিল্ড করে ফোনে টেস্ট।
+
+## Original MVP ZIP — `mvp-original/`
+ভিডিওর চ্যাটে বানানো আসল ZIP-টা (ব্যবহারকারী নিজে আপলোড করেছেন 2026-11-01) এখানে `mvp-original/` ফোল্ডারে হুবহু রাখা হয়েছে — এটার Android অংশটা বেশি পূর্ণাঙ্গ: Kotlin + Compose + আসল WireGuard tunnel লাইব্রেরি (`VpnManager.kt`, `ApiClient.kt`)।
+- এর backend (`mvp-original/server/backend/app.py`) 2026-11-01 এখানে চালিয়ে যাচাই করা: health OK, `/api/servers` (7টা স্লট), ভুল পাসওয়ার্ডে 401, `demo`/`demo123`-এ টোকেন, peer config না থাকলে 404, টোকেন ছাড়া 401 — সব পাস।
+- Android কোড এখনো Android Studio-তে কম্পাইল-যাচাই হয়নি — সেটাই পরের ধাপ (tunnel লাইব্রেরির API ভার্সন মিলিয়ে দেখতে হবে)।
+- রুটের `backend/` আমার বানানো সরল সংস্করণ (আলাদা endpoint: `/servers`, `/login`, `/config`) — দুটো backend একসাথে চালানোর দরকার নেই, সার্ভার এলে একটা বেছে নিলেই হবে।
